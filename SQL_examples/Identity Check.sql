@@ -1,0 +1,1 @@
+DBCC CHECKIDENT('tblPagForma', RESEED, 0)
