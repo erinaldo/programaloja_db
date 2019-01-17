@@ -1,11 +1,11 @@
-USE [NovaSiao]
-GO
+--
 
+--
 -- =============================================
 -- Author:		Daniel
 -- Create date: 01/01/2018
--- Alteracao:   06/12/2018
--- Description:	Alter qryAReceberParcela
+-- Alteracao:   16/01/2019
+-- Description:	qryAReceberParcela
 -- =============================================
 
 ALTER VIEW [dbo].[qryAReceberParcela]
@@ -38,7 +38,7 @@ Pe.Cadastro
 ,tP.SituacaoParcela
 ,tP.PagamentoData
 FROM tblAReceber AS tR
-LEFT JOIN
+JOIN
 tblAReceberParcela AS tP ON tP.IDAReceber = tR.IDAReceber
 LEFT JOIN
 qryPessoaFisicaJuridica AS Pe ON tr.IDPessoa = Pe.IDPessoa
@@ -47,5 +47,3 @@ tblPessoaFilial AS F ON tR.IDFilial = F.IDFilial
 
 
 GO
-
-
