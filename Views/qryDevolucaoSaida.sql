@@ -3,17 +3,28 @@
 -- =============================================
 -- Author:		Daniel
 -- Create date: 19/01/2018
+<<<<<<< HEAD
 -- Alteracao:   19/01/2018
 -- Description:	qryDevolucaoSaida
 -- =============================================
 
 CREATE VIEW qryDevolucaoSaida
+=======
+-- Alteracao:   20/01/2018
+-- Description:	qryDevolucaoSaida
+-- =============================================
+
+ALTER VIEW [dbo].[qryDevolucaoSaida]
+>>>>>>> DevolucaoSaida_P2
 
 AS
 SELECT
 -- tblDevolucaoSaida
 D.IDDevolucao
+<<<<<<< HEAD
 ,Filial.ApelidoFilial
+=======
+>>>>>>> DevolucaoSaida_P2
 ,D.TotalDevolucao
 ,D.ValorProdutos
 ,D.ValorDescontos
@@ -22,12 +33,20 @@ D.IDDevolucao
 ,D.Enviada
 ,D.Creditada
 --
+<<<<<<< HEAD
 -- tblTransacao : O
+=======
+-- tblObservacao : O
+>>>>>>> DevolucaoSaida_P2
 ,O.Observacao
 --
 -- tblTransacao : T
 ,T.IDPessoaDestino
 ,T.IDPessoaOrigem
+<<<<<<< HEAD
+=======
+,Filial.ApelidoFilial
+>>>>>>> DevolucaoSaida_P2
 ,T.IDOperacao
 ,T.IDSituacao
 ,S.Situacao
@@ -38,11 +57,17 @@ D.IDDevolucao
 -- tblAReceber : R
 ,R.SituacaoAReceber
 ,R.ValorPagoTotal
+<<<<<<< HEAD
 ,R.IDCobrancaForma
 ,R.IDPlano
 --
 -- qryPessoaFisicaJuridica
 ,Fornecedor.Cadastro AS Cadastro
+=======
+--
+-- qryPessoaFisicaJuridica
+,Fornecedor.Cadastro AS Fornecedor
+>>>>>>> DevolucaoSaida_P2
 ,Fornecedor.CNP
 ,Fornecedor.UF
 ,Fornecedor.Cidade
@@ -73,6 +98,10 @@ LEFT JOIN tblPessoaFilial AS Filial
 LEFT JOIN tblObservacao AS O
 	ON O.IDOrigem = D.IDDevolucao AND O.Origem = 12 --ORIGEM: tblDevolucaoSaida
 
+<<<<<<< HEAD
 GO
 
 
+=======
+GO
+>>>>>>> DevolucaoSaida_P2
