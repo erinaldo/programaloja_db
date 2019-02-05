@@ -1,20 +1,9 @@
-USE [NovaSiao]
-GO
-
-/****** Object:  View [dbo].[qryMovimentacao]    Script Date: 20/12/2018 16:47:57 ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
-
 --
 
 -- =============================================================
 -- Author:		Daniel
 -- Create date: 19/12/2018
--- Alter date:	20/12/2018
+-- Alter date:	04/02/2019
 -- Description:	Consulta Movimentacao
 -- =============================================================
 
@@ -43,6 +32,12 @@ IDMovimentacao
 	END AS OrigemTexto
 , M.IDConta
 , C.Conta
+, M.IDMeio
+, CASE M.IDMeio
+	WHEN 1 THEN 'Moeda'
+	WHEN 2 THEN 'Cheque'
+	WHEN 3 THEN 'Cartao'
+	END AS Meio
 , M.IDMovForma
 , F.MovForma
 , F.IDMovTipo

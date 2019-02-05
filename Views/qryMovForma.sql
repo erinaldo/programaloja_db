@@ -1,20 +1,13 @@
-USE [NovaSiao]
-GO
+--
 
-/****** Object:  View [dbo].[qryMovForma]    Script Date: 15/12/2018 19:16:28 ******/
-SET ANSI_NULLS ON
-GO
+-- =============================================================
+-- Author:			Daniel Ramos de Oliveira
+-- Create date:		27/01/2018
+-- Alteracao Data:	04/02/2019
+-- Description:		qryMovForma
+-- =============================================================
 
-SET QUOTED_IDENTIFIER ON
-GO
-
-/****** 
-Object:
-View [dbo].[qryMovForma]    
-Script Date: 27/01/2018
-Alter Date:  15/12/2018
-******/
-
+--
 ALTER VIEW	[dbo].[qryMovForma]
 
 AS
@@ -23,6 +16,12 @@ AS
 	, F.MovForma
 	, F.IDMovTipo
 	, T.MovTipo
+	, T.IDMeio
+	, CASE T.IDMeio
+		WHEN 1 THEN 'Moeda'
+		WHEN 2 THEN 'Cheque'
+		WHEN 3 THEN 'Cartão'
+		END AS MeioDescricao
 	, F.IDCartaoTipo
 	, C.Cartao
 	, F.Parcelas
@@ -46,5 +45,3 @@ AS
 		ON F.IDContaPadrao = CT.IDConta
 
 GO
-
-

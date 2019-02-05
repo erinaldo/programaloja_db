@@ -1,9 +1,11 @@
-/****** 
-Object:			qryCaixa
-Script Date:	22/01/2018
-Alter Date:		14/12/2018
-******/
+--
 
+-- =============================================
+-- Author:		Daniel
+-- Create date: 22/01/2018
+-- Alter date:	02/02/2019
+-- Description:	qryCaixa
+-- =============================================
 
 ALTER VIEW [dbo].[qryCaixa]
 AS
@@ -25,16 +27,20 @@ C.IDCaixa
 , C.SaldoFinal
 , C.SaldoAnterior
 , O.Observacao
+, C.CaixaFinalDia
+, C.IDFuncionario
+, F.ApelidoFuncionario
 
 FROM tblCaixa AS C
 LEFT JOIN tblCaixaContas AS Ct
 ON CT.IDConta = C.IDConta
 LEFT JOIN tblPessoaFilial AS P
 ON P.IDFilial = C.IDFilial
+LEFT JOIN tblPessoaFuncionario AS F
+ON C.IDFuncionario = F.IDFuncionario
 LEFT JOIN tblObservacao AS O
 ON O.IDOrigem = C.IDCaixa AND O.Origem = 5
 
-
-
-
 GO
+
+
