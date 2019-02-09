@@ -3,7 +3,7 @@
 -- =============================================================
 -- Author:		Daniel
 -- Create date: 19/12/2018
--- Alter date:	04/02/2019
+-- Alter date:	08/02/2019
 -- Description:	Consulta Movimentacao
 -- =============================================================
 
@@ -58,6 +58,7 @@ IDMovimentacao
 ,O.Observacao
 ,Fil.IDFilial
 ,Fil.ApelidoFilial
+,F.IDContaPadrao
 
 FROM
 tblCaixaMovimentacao AS M
@@ -75,5 +76,3 @@ LEFT JOIN
 tblPessoaFilial AS Fil ON C.IDFilial = Fil.IDFilial
 
 GO
-
-
